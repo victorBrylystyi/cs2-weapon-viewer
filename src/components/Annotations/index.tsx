@@ -53,6 +53,7 @@ export const Annotations = (props: PropsType) => {
        <>
         {config.map(weaponConf => 
             <Sphere 
+                args={[1.5, 64, 64]}
                 key={weaponConf.title}
                 position={weaponConf.position}
                 onClick={clickHandle}

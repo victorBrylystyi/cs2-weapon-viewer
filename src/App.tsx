@@ -8,6 +8,21 @@ import { Presets } from './helpers/types';
 import { useSnapshot } from 'valtio';
 import { store } from './store';
 
+const Overlay = () => {
+  return (
+    <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', pointerEvents: 'none' }}>
+      <div style={{ position: 'absolute', top: 40, left: 40, fontSize: '20px', fontFamily: 'Meslo', lineHeight: '1.6em', whiteSpace: 'pre' }}>
+        {/* &gt; Counter Strike 2 weapon viewer 
+        <br /> */}
+        &gt; Click on spheres to change the view 
+        <br />
+        &gt; Click on weapon parts to change the depth of field target 
+      </div>
+      <div style={{ position: 'absolute', bottom: 40, right: 40, fontSize: '14px' }}>14/09/2024</div>
+    </div>
+  )
+};
+
 export const App = () => {
 
   const orbitEnabled = !useSnapshot(store).damping;
@@ -33,6 +48,7 @@ export const App = () => {
           <Experience />
         </Suspense>
       </Canvas>
+      <Overlay />
     </>
 
   );
